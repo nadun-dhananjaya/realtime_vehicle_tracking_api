@@ -34,8 +34,7 @@ const setLocation = async(req,res) =>  {
         "latitude" : latitude
     }
 
-    const current_time = (new Date()).getTime();
-    await setDoc(doc(firestore,collectionName,current_time.toString()),data)
+    await setDoc(doc(firestore,collectionName,trackerId),data)
 
 
     res.send(JSON.stringify(data))
