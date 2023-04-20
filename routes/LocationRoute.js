@@ -4,7 +4,7 @@ import setLocation from "../controller/LocationController/SetLocationController.
 const locationRouter = express.Router()
 
 
-locationRouter.get('/set-location',setLocation)
+locationRouter.post('/set-location',setLocation)
 
 
 export default locationRouter
