@@ -17,26 +17,25 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 const firestore = getFirestore(firebaseApp)
-const collectionName  = "v_locations"
+const collectionName  = "v_cars"
 
 
-const setLocation = async(req,res) =>  {
-    const trackerId =  req.query.trackerId;
-    const longitude = req.query.longitude;
-    const latitude = req.query.latitude;
+const addCar = async(req,res) =>  {
+    const riderName =  req.query.riderName;
+    const vehicleNo = req.query.vehicleNo;
+
 
     const data = {
-        "trackerId" : trackerId,
-        "longitude" : longitude,
-        "latitude" : latitude
+        "riderName" : riderName,
+        "vehicleNo" : vehicleNo,
     }
 
-    await setDoc(doc(firestore,collectionName,trackerId),data)
+    await setDoc(doc(firestore,collectionName,vehicleNo),data)
 
 
     res.send(JSON.stringify(data))
 
 }
 
-export default setLocation
+export default addCar
 
