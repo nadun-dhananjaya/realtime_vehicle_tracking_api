@@ -8,7 +8,8 @@ import cors from 'cors'
 const app = express()
 const env =dotenv.config();
 app.use(cors({
-    origin: '*'
+    origin: '*',
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }));
 
 app.use(bodyParser.urlencoded({extended:false}))
