@@ -3,10 +3,11 @@ import dotenv from "dotenv"
 import bodyParser from "body-parser";
 import locationRouter from "./routes/LocationRoute.js";
 import carRoutes from "./routes/CarRoutes.js";
-
+import cors from 'cors'
 
 const app = express()
 const env =dotenv.config();
+app.use(cors())
 
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
