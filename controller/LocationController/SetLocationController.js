@@ -24,11 +24,13 @@ const setLocation = async(req,res) =>  {
     const trackerId =  req.query.trackerId;
     const longitude = req.query.longitude;
     const latitude = req.query.latitude;
+    const speed = req.query.speed;
 
     const data = {
         "trackerId" : trackerId,
         "longitude" : longitude,
-        "latitude" : latitude
+        "latitude" : latitude,
+        "speed": speed
     }
 
     await setDoc(doc(firestore,collectionName,trackerId),data)
